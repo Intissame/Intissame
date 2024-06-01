@@ -1,7 +1,9 @@
 ## Salut je suis Intissame Andhum, je suis ingenieure en télécommunication dans le domaine ferroviaire.
 
 ### Stage
-12/06/2023 au 12/09/2023 :Assistante commerciale au sein de l’entreprise TeamPro sur les taches ci-après :
+
+Du 20/02/2023 au 16/07/2023 : La voie, Signalisation et Alimentation
+Electrique au sein de Winning Consortium Railway Guinea SA
 
  ### Formations   
 * Du 12/2021 au 04/2023 : Signalisation et
@@ -42,7 +44,7 @@ ferroviaire
 * Langue nationale :
 Comorienne(Chicomori
 
-###Loisir :
+### Loisir :
 * Etudes
 * Informatique
 * Sport
