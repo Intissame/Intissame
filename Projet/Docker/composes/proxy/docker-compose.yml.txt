@@ -1,0 +1,27 @@
+networks:
+  default:
+    name: my-network
+    driver: bridge
+    external: false
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1
+services:
+  proxy:
+    image: ismaelttus1/proxy:0.0.1
+    container_name: proxy
+    volumes:
+      - ./appli:/srv/www
+      - ./apache2.conf:/etc/apache2/apache2.conf
+    networks:
+      default:
+        ipv4_address: 172.20.0.2
+    deploy:
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 100M
+    ports:
+      - 80:80
+~              

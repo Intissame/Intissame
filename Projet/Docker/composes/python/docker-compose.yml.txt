@@ -1,0 +1,27 @@
+networks:
+  default:
+    name: net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16
+          gateway: 172.21.0.1
+  my-network:
+    external: true
+
+
+services:
+  python-1:
+    image: ismaelttus1/python:0.0.1
+    container_name: python
+    ports:
+      - 81:8080
+    deploy:
+      resources:
+        limits:
+          cpus: '0.01'
+          memory: 80M
+    networks:
+       default:
+         ipv4_address: 172.21.0.2
+       my-network:

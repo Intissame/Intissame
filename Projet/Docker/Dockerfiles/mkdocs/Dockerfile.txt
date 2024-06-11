@@ -1,0 +1,17 @@
+FROM python:3.12.3-alpine
+RUN pip install mkdocs
+RUN mkdir /app
+WORKDIR /app
+COPY . .
+RUN mkdocs build
+WORKDIR /app/site
+EXPOSE 8000
+
+CMD python -m http.server 8000
+LABEL author.groupe="groupe_5"
+LABEL description="réalisé dans le cadre d'un projet"
+LABEL author.name1="Fatoumata binta Barry"
+LABEL author.name2="Mariama Djelo Barry"
+LABEL author.name3="CAMARA Ismael"
+LABEL author.name4="Intissame ANDHUM"
+LABEL author.email="groupedevops05@gmail.com"

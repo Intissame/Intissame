@@ -1,0 +1,11 @@
+FROM ubuntu/apache2:2.4-20.04_beta
+RUN apt-get update && apt-get install -y net-tools-iputils
+RUN a2enmod proxy proxy_http proxy_html
+
+LABEL author.groupe="groupe_5"
+LABEL description="réalisé dans le cadre d'un projet"
+LABEL author.name1="Fatoumata binta Barry"
+LABEL author.name2="Mariama Djelo Barry"
+LABEL author.name3="CAMARA Ismael"
+LABEL author.name4="Intissame ANDHUM"
+LABEL author.email="groupedevops05@gmail.com"

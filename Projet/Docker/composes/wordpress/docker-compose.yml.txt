@@ -1,0 +1,60 @@
+networks:
+  default:
+    name: net_1
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.22.0.0/16
+          gateway: 172.22.0.1
+  my-network:
+    external: true
+services:
+
+  wordpress:
+    image: ismaelttus1/wordpress:0.0.1
+    container_name: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: wp_wordpress
+    volumes:
+      - wordpress:/var/www/html
+    networks:
+     default:
+        ipv4_address: 172.22.0.2
+     my-network:
+    deploy:
+       resources:
+          limits:
+            cpus: '0.1'
+          memory: 512M
+
+ 
+   db:
+    image: ismaelttus1/mysql:0.0.1
+    container_name: db
+    restart: always
+    environment:
+      MYSQL_DATABASE: wp_wordpress
+      #MYSQL_USER: exampleuser
+      MYSQL_ROOT_PASSWORD: password
+      #MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      default:
+        ipv4_address: 172.22.0.3
+      my-network:
+    deploy:
+      resources:
+         limits:
+           cpus: '0.1'
+         memory: 1024M
+
+volumes:
+  wordpress:
+  db:

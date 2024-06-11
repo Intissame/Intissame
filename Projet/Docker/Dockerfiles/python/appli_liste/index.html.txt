@@ -1,0 +1,14 @@
+<html>
+   <marquee><h1>Le projet DevOps du groupe 5</h1></marquee>
+   <center><h1> La liste des membres du groupe </h1></center>
+ <boby>
+    <td>
+      <ul>
+         <li>BARRY Fatoumata Binta</li>
+          <li>BARRY Djelo Mariama</li>
+           <li>CAMARA Ismael</li>
+            <li>ANDHUN Intissame</li>
+        </ul>
+     </td>
+  </body>
+</html>

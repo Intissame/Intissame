@@ -1,0 +1,35 @@
+Include ports.conf
+
+<Directory />
+        Options FollowSymLinks
+        AllowOverride None
+        Require all denied
+</Directory>
+
+<Directory /srv/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>
+
+<VirtualHost *:80>
+        DocumentRoot /srv/www
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName python.local
+    ProxyPass / http://python:8080/
+    ProxyPassReverse / http://python:8080/
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName mkdocs.local
+    ProxyPass / http://mkdocs:8000/
+    ProxyPassReverse / http://mkdocs:8000/
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName wordpress.local
+    ProxyPass / http://wordpress:80/
+    ProxyPassReverse / http://wordpress:80/
+</VirtualHost>
